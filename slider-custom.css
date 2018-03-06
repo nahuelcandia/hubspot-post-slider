@@ -1,0 +1,124 @@
+.slider-pro {
+    font-family: 'Open Sans', Arial !important;
+}
+
+.links {
+	text-align: center;
+	margin-top: 10px;
+}
+.slide-counter {
+	margin-top: -5px;
+	float: right;
+	color: #b4404b;
+	font-weight: 300;
+}
+.post-title {
+	max-width: 80%;
+}
+.sp-caption-container {
+  float: left;
+  margin-bottom: 50px;
+}
+#slider-vertical .sp-thumbnail-image-container {
+	width: 100px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+}
+
+#slider-vertical .sp-thumbnail-image {
+	height: 100%;
+}
+
+#slider-vertical .sp-thumbnail-text {
+	width: 170px;
+    float: right;
+    padding: 8px;
+    background-color: #F0F0F0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#slider-vertical .sp-thumbnail-title {
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: #333;
+}
+
+#slider-vertical .sp-thumbnail-description {
+	font-size: 14px;
+	color: #333;
+}
+
+#slider-horizontal .sp-thumbnail {
+	width: 100%;
+	padding: 8px;
+	background-color: #F0F0F0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#slider-horizontal .sp-thumbnail-title {
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: #333;
+}
+
+#slider-horizontal .sp-thumbnail-description {
+	font-size: 14px;
+	color: #333;
+}
+
+@media (max-width: 860px) {
+	#slider-horizontal .hide-medium-screen {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	#slider-horizontal .sp-layer {
+		font-size: 12px;
+	}
+
+	#slider-horizontal .hide-small-screen {
+		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	#slider-horizontal .sp-thumbnail {
+		text-align: center;
+	}
+
+	#slider-horizontal .sp-thumbnail-title {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	#slider-horizontal .sp-thumbnail-description {
+		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	#slider-vertical .sp-thumbnail {
+		text-align: center;
+	}
+
+	#slider-vertical .sp-thumbnail-image-container {
+		display: none;
+	}
+
+	#slider-vertical .sp-thumbnail-text {
+		width: 120px;
+	}
+
+	#slider-vertical .sp-thumbnail-title {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	#slider-vertical .sp-thumbnail-description {
+		display: none;
+	}
+}
