@@ -13,8 +13,7 @@ if($('#slider-horizontal').length > 0){
 $.when(createSliders()).then(function(){
   if($('#slider-horizontal').length > 0){
     $('#slider-horizontal').sliderPro({
-  		width: '100%',
-  		height: 500,
+  		width: '90%',
   		arrows: true,
   		buttons: false,
   		waitForLayers: true,
@@ -75,9 +74,14 @@ function createSliders(){
            '<h1 class="slide-counter">'+index+'/'+total_posts+'</h1>'+
            '<h1 class="post-title">'+slide_title+'</h1>'+
            '<div class="post-content">'+slide_content_html+'</div>'+
+           '<div style="width: 4%;margin-left: 48%;position: relative;text-align: center;">'+
+              '<div class="sp-arrow sp-previous-arrow previous-post-slide"></div>'+
+                '<div class="sp-arrow" style="width: 100%;"><span style=" text-align: center; width: 100%; font-size: 20px; color: #b4404b; ">'+index+'/'+total_posts+'</span></div>'+
+              '<div class="sp-arrow sp-next-arrow next-post-slide"></div>'+
+            '</div>'+
          '</div>'+
       '</div>'
-    );
+    );/*
     if($('#slider-horizontal').length > 0){
       slide_content_txt = slide_content_txt.substr(0, (slide_content_txt.length-(slide_content_txt.length-55)))+'...';
       $('.sp-thumbnails').append(
@@ -99,7 +103,15 @@ function createSliders(){
           '</div>'+
         '</div>'
       );
-    }
+    }*/
     $(this).remove();
   });
 }
+$(document).ready(function() {
+  $(document).on('click', '.next-post-slide', function() {
+    $('.sp-fade-arrows .sp-next-arrow').click();
+  });
+  $(document).on('click', '.previous-post-slide', function() {
+    $('.sp-fade-arrows .sp-previous-arrow').click();
+  });
+});
