@@ -1,3 +1,11 @@
+.post-body {
+  z-index: 999999999999999 !important;
+  position: relative !important;
+}
+.sp-image {
+  width: 100% !important;
+  height: auto !important;
+}
 .slider-pro {
     font-family: 'Open Sans', Arial !important;
 }

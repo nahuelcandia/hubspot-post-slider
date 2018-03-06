@@ -74,7 +74,7 @@ function createSliders(){
            '<h1 class="slide-counter">'+index+'/'+total_posts+'</h1>'+
            '<h1 class="post-title">'+slide_title+'</h1>'+
            '<div class="post-content">'+slide_content_html+'</div>'+
-           '<div style="width: 4%;margin-left: 48%;position: relative;text-align: center;">'+
+           '<div style="width: 14%;margin-left: 43%;position: relative;text-align: center;">'+
               '<div class="sp-arrow sp-previous-arrow previous-post-slide"></div>'+
                 '<div class="sp-arrow" style="width: 100%;"><span style=" text-align: center; width: 100%; font-size: 20px; color: #b4404b; ">'+index+'/'+total_posts+'</span></div>'+
               '<div class="sp-arrow sp-next-arrow next-post-slide"></div>'+
@@ -113,5 +113,12 @@ $(document).ready(function() {
   });
   $(document).on('click', '.previous-post-slide', function() {
     $('.sp-fade-arrows .sp-previous-arrow').click();
+  });
+  $( window ).resize(function() {
+    if($('#slider-horizontal').length > 0){
+      $('.sp-caption-container').css('width', $('#slider-horizontal').outerWidth());
+    } else {
+      $('.sp-caption-container').css('width', $('#slider-vertical').outerWidth());
+    }
   });
 });
