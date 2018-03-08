@@ -67,9 +67,10 @@ function createSliders(){
     var slide_title = $(this).find('.post_title').text();
     var slide_content_html = $(this).find('.post_content').html();
     var slide_content_txt = $(this).find('.post_content').text();
+    var image_height = $('.sp-image-container').outerHeight();
     $('.sp-slides').append(
       '<div class="sp-slide">'+
-         '<img class="sp-image" src="https://cdn2.hubspot.net/hubfs/2661678/blank.gif" data-src="'+slide_image+'"'+ 'data-retina="'+slide_image+'">'+
+         '<img class="sp-image" style="height:'+image_height+' !important;" src="https://cdn2.hubspot.net/hubfs/2661678/blank.gif" data-src="'+slide_image+'"'+ 'data-retina="'+slide_image+'">'+
          '<div class="sp-caption">'+
            '<h1 class="slide-counter">'+index+'/'+total_posts+'</h1>'+
            '<h1 class="post-title">'+slide_title+'</h1>'+
@@ -81,7 +82,7 @@ function createSliders(){
             '</div>'+
          '</div>'+
       '</div>'
-    );/*
+    );
     if($('#slider-horizontal').length > 0){
       slide_content_txt = slide_content_txt.substr(0, (slide_content_txt.length-(slide_content_txt.length-55)))+'...';
       $('.sp-thumbnails').append(
@@ -103,7 +104,7 @@ function createSliders(){
           '</div>'+
         '</div>'
       );
-    }*/
+    }
     $(this).remove();
   });
 }

@@ -3,8 +3,14 @@
   position: relative !important;
 }
 .sp-image {
-  width: 100% !important;
-  height: auto !important;
+  width: 50% !important;
+  margin-left: 25% !important;
+  margin-top: 0px !important;
+}
+
+.sp-image-container {
+  background-color: #8080801f;
+  background-size: cover;
 }
 .slider-pro {
     font-family: 'Open Sans', Arial !important;
