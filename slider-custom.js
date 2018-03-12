@@ -11,9 +11,16 @@ if($('#slider-horizontal').length > 0){
 }
 
 $.when(createSliders()).then(function(){
+  $('.social-share-slider').show();
+  $('.social-share-generic').css('visibility','hidden');
+  $('.social-share-generic').css('height','10px !important');
   if($('#slider-horizontal').length > 0){
     $('#slider-horizontal').sliderPro({
-  		width: '90%',
+  		width: '80%',
+      captionFadeDuration: 100,
+      fade: true,
+      fadeOutPreviousSlide: true,
+      autoHeight: true,
   		arrows: true,
   		buttons: false,
   		waitForLayers: true,
@@ -71,18 +78,18 @@ function createSliders(){
     $('.sp-slides').append(
       '<div class="sp-slide">'+
          '<img class="sp-image" src="https://cdn2.hubspot.net/hubfs/2661678/blank.gif" data-src="'+slide_image+'"'+ 'data-retina="'+slide_image+'">'+
-         '<div class="sp-caption">'+
+         '<div class="sp-caption sp-grab">'+
            '<h1 class="slide-counter">'+index+'/'+total_posts+'</h1>'+
            '<h1 class="post-title">'+slide_title+'</h1>'+
-           '<div class="post-content">'+slide_content_html+'</div>'+
-           '<div style="width: 14%;margin-left: 43%;position: relative;text-align: center;">'+
+           '<div class="post-content ">'+slide_content_html+'</div>'+
+           '<div class="slider-pagination">'+
               '<div class="sp-arrow sp-previous-arrow previous-post-slide"></div>'+
                 '<div class="sp-arrow" style="width: 100%;"><span style=" text-align: center; width: 100%; font-size: 20px; color: #b4404b; ">'+index+'/'+total_posts+'</span></div>'+
               '<div class="sp-arrow sp-next-arrow next-post-slide"></div>'+
             '</div>'+
          '</div>'+
       '</div>'
-    );
+    );/*
     if($('#slider-horizontal').length > 0){
       slide_content_txt = slide_content_txt.substr(0, (slide_content_txt.length-(slide_content_txt.length-55)))+'...';
       $('.sp-thumbnails').append(
@@ -103,7 +110,7 @@ function createSliders(){
           '</div>'+
         '</div>'
       );
-    }
+    }*/
     $(this).remove();
   });
 }

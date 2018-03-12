@@ -3,8 +3,10 @@
   position: relative !important;
 }
 .sp-image {
-  width: 50% !important;
-  margin-left: 25% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  text-align: center;
   margin-top: 0px !important;
 }
 
@@ -21,13 +23,22 @@
 	margin-top: 10px;
 }
 .slide-counter {
-	margin-top: -5px;
 	float: right;
 	color: #b4404b;
-	font-weight: 300;
+  font-weight: 700 !important;
+  font-size: 35px;
+  line-height: 48px;
+  margin-top: 12px;
+}
+.slider-pagination {
+  width: 14%;
+  margin-left: 43%;
+  position: relative;
+  text-align: center;
 }
 .post-title {
 	max-width: 80%;
+  font-weight: 700 !important;
 }
 .sp-caption-container {
   float: left;
@@ -84,12 +95,32 @@
 }
 
 @media (max-width: 860px) {
+  .blog-wrapped-section {
+    padding-top: 0px !important;
+  }
 	#slider-horizontal .hide-medium-screen {
 		display: none;
 	}
+  .slide-counter {
+    margin-top: -5px !important;
+    float: right;
+    color: #b4404b;
+    font-weight: 700 !important;
+    font-size: 27px !important;
+    line-height: 35px !important;
+  }
+  .slider-pagination {
+    width: 40%;
+    margin-left: 30%;
+    position: relative;
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
+  .blog-wrapped-section {
+    padding-top: 0px !important;
+  }
 	#slider-horizontal .sp-layer {
 		font-size: 12px;
 	}
@@ -97,9 +128,26 @@
 	#slider-horizontal .hide-small-screen {
 		display: none;
 	}
+  .slide-counter {
+    margin-top: -5px !important;
+    float: right;
+    color: #b4404b;
+    font-weight: 700 !important;
+    font-size: 27px !important;
+    line-height: 35px !important;
+  }
+  .slider-pagination {
+    width: 40%;
+    margin-left: 30%;
+    position: relative;
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
+  .blog-wrapped-section {
+    padding-top: 0px !important;
+  }
 	#slider-horizontal .sp-thumbnail {
 		text-align: center;
 	}
@@ -112,6 +160,20 @@
 	#slider-horizontal .sp-thumbnail-description {
 		display: none;
 	}
+  .slide-counter {
+    margin-top: -5px !important;
+    float: right;
+    color: #b4404b;
+    font-weight: 700 !important;
+    font-size: 27px !important;
+    line-height: 35px !important;
+  }
+  .slider-pagination {
+    width: 40%;
+    margin-left: 30%;
+    position: relative;
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
@@ -135,4 +197,12 @@
 	#slider-vertical .sp-thumbnail-description {
 		display: none;
 	}
+}
+@media screen and (max-width: 768px){
+  .section.post-body {
+      text-align: left;
+  }
+  .about-author-sec {
+  padding: 0px 0px;
+  }
 }
