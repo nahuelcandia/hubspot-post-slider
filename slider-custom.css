@@ -14,7 +14,22 @@
   background-color: #8080801f;
   background-size: cover;
 }
-
+.sp-thumbnail-container {
+  margin-bottom: 30px;
+}
+.sp-thumbnail {
+  background-size: cover;
+  background-position-x: center;
+   background-repeat: no-repeat;
+  height: 130px;
+}
+.slider-pagination-bottom {
+  margin-left: 35px;
+  margin-right: 35px;
+  height: auto;
+  margin-bottom: 30px;
+  display: inline-block;
+}
 .links {
 	text-align: center;
 	margin-top: 10px;

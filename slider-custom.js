@@ -25,7 +25,7 @@ $.when(createSliders()).then(function(){
   		buttons: false,
   		waitForLayers: true,
   		thumbnailWidth: 200,
-  		thumbnailHeight: 100,
+  		thumbnailHeight: 'auto',
   		thumbnailPointer: true,
   		autoplay: false,
   		autoScaleLayers: false,
@@ -82,18 +82,13 @@ function createSliders(){
            '<h1 class="slide-counter">'+index+'/'+total_posts+'</h1>'+
            '<h1 class="post-title">'+slide_title+'</h1>'+
            '<div class="post-content ">'+slide_content_html+'</div>'+
-           '<div class="slider-pagination">'+
-              '<div class="sp-arrow sp-previous-arrow previous-post-slide"></div>'+
-                '<div class="sp-arrow" style="width: 100%;"><span style=" text-align: center; width: 100%; font-size: 20px; color: #b4404b; ">'+index+'/'+total_posts+'</span></div>'+
-              '<div class="sp-arrow sp-next-arrow next-post-slide"></div>'+
-            '</div>'+
          '</div>'+
       '</div>'
-    );/*
+    );
     if($('#slider-horizontal').length > 0){
       slide_content_txt = slide_content_txt.substr(0, (slide_content_txt.length-(slide_content_txt.length-55)))+'...';
       $('.sp-thumbnails').append(
-        '<div class="sp-thumbnail" style="background-size: contain; background-position-x: center; background-repeat: no-repeat; background-image: url('+slide_image+'); height: 100px;">'+
+        '<div class="sp-thumbnail" style="background-image: url('+slide_image+');">'+
           '<div class="sp-thumbnail-text">'+
              '<div class="sp-thumbnail-title"></div>'+
           '</div>'+
@@ -110,7 +105,7 @@ function createSliders(){
           '</div>'+
         '</div>'
       );
-    }*/
+    }
     $(this).remove();
   });
 }
@@ -121,6 +116,7 @@ $(document).ready(function() {
   $(document).on('click', '.previous-post-slide', function() {
     $('.sp-fade-arrows .sp-previous-arrow').click();
   });
+  $('.sp-thumbnails-container').appendTo('.slider-pagination-bottom');
   $( window ).resize(function() {
     if($('#slider-horizontal').length > 0){
       $('.sp-caption-container').css('width', $('#slider-horizontal').outerWidth());
