@@ -419,8 +419,6 @@
     width: 20px;
     height: 30px;
     cursor: pointer;
-    vertical-align: top;
-    margin-top: 35px;
 }
 
 .sp-vertical .sp-arrow,
@@ -465,7 +463,7 @@
     position: absolute;
     width: 50%;
     height: 50%;
-    background-color: #b4404b
+    background-color: #FFF;
 }
 
 .sp-arrow:before,
