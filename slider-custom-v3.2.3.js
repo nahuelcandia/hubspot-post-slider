@@ -10,7 +10,7 @@ function nodesToArray(args) {
 // #1: inspect the markup html and prepare the "slider" object.
 function inspectMarkup(callback) {
   // This function help us to check and get the element desired using
-  // and identifier "id":
+  // and identifier "className":
   function filterChild(chidren, className) {
     const index = nodesToArray(chidren).findIndex(function(element) {
       if (element.classList.contains(className)) {
@@ -36,7 +36,7 @@ function inspectMarkup(callback) {
   // because using an index we get the matched node
   // and replace the old one from the dom:
   const slider = slides.reduce((target, slide, index, array) => {
-    const children = nodesToArray(slide.children),
+    let children = nodesToArray(slide.children),
       image = filterChild(children, 'sl-image'),
       title = filterChild(children, 'sl-title'),
       counter = document.createElement('span'),
@@ -45,7 +45,7 @@ function inspectMarkup(callback) {
     // Prepare "image":
     if (!image) {
       // Because the image wasn't using the "filterChild" function,
-      // ww'll create a default image:
+      // we'll create a default image:
       image = document.createElement('img');
       image.classList.add('sl-image');
       image.setAttribute('src', 'http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif');
@@ -86,13 +86,9 @@ function inspectMarkup(callback) {
     img.classList.add('sl-thumbnail-image');
     img.setAttribute('tabindex', index);
     thumbnail.appendChild(img);
-    thumbnail.classList.add('sl-thumbnail');
-    // !!index && thumbnail.classList.add('sl-thumbnail-no-selected');
-    if (index === 0) {
-      thumbnail.classList.add('sl-thumbnail-active');
-    } else {
-      thumbnail.classList.add('sl-thumbnail-no-selected');
-    }
+    thumbnail.classList.add('sl-thumbnail',
+      index ? 'sl-thumbnail-no-selected' : 'sl-thumbnail-active'
+    );
     target.thumbnails.push(thumbnail);
 
     return target;
