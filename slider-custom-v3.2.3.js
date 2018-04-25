@@ -10,7 +10,7 @@ function nodesToArray(args) {
 // #1: inspect the markup html and prepare the "slider" object.
 function inspectMarkup(callback) {
   // This function help us to check and get the element desired using
-  // and identifier "className":
+  // and identifier "id":
   function filterChild(chidren, className) {
     const index = nodesToArray(chidren).findIndex(function(element) {
       if (element.classList.contains(className)) {
@@ -36,7 +36,7 @@ function inspectMarkup(callback) {
   // because using an index we get the matched node
   // and replace the old one from the dom:
   const slider = slides.reduce((target, slide, index, array) => {
-    let children = nodesToArray(slide.children),
+    const children = nodesToArray(slide.children),
       image = filterChild(children, 'sl-image'),
       title = filterChild(children, 'sl-title'),
       counter = document.createElement('span'),
@@ -45,7 +45,7 @@ function inspectMarkup(callback) {
     // Prepare "image":
     if (!image) {
       // Because the image wasn't using the "filterChild" function,
-      // we'll create a default image:
+      // ww'll create a default image:
       image = document.createElement('img');
       image.classList.add('sl-image');
       image.setAttribute('src', 'http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif');
@@ -86,9 +86,12 @@ function inspectMarkup(callback) {
     img.classList.add('sl-thumbnail-image');
     img.setAttribute('tabindex', index);
     thumbnail.appendChild(img);
-    thumbnail.classList.add('sl-thumbnail',
-      index ? 'sl-thumbnail-no-selected' : 'sl-thumbnail-active'
-    );
+    thumbnail.classList.add('sl-thumbnail');
+    if (index === 0) {
+      thumbnail.classList.add('sl-thumbnail-active');
+    } else {
+      thumbnail.classList.add('sl-thumbnail-no-selected');
+    }
     target.thumbnails.push(thumbnail);
 
     return target;
@@ -178,7 +181,7 @@ function renderMarkup(slider, callback) {
   // we return a new promise resolved to chain more functions.
   return callback
     ? callback(wrapper)
-    : Promise.resolve({ slider, wrapper });
+    : Promise.resolve({ slider: slider, wrapper: wrapper });
 };
 
 // #3: watch changes like clicks.
@@ -187,10 +190,8 @@ function watchChanges({ slider, wrapper }) {
   // like the index to change the image whenever the user clicks.
   // we also do a shallow copy of the slider on the state to keep the values
   // in a main namespace instead of looking them around over the entire script.
-  const state = {
-    index: 0,
-    ...slider
-  };
+  const state = slider;
+  state.index = 0;
 
   // UPDATES: Apply changes directly in the DOM:
   function updateState(indexOrDirection) {
@@ -340,12 +341,7 @@ function watchChanges({ slider, wrapper }) {
   });
 };
 
-// Entry point:
+// Entry point: 1. inspectMarkup -> 2. renderMarkup -> 3. watchChanges.
 inspectMarkup()
   .then(renderMarkup)
   .then(watchChanges);
-
-/*
-Author: Norman Carcamo
-Date: 24/Apr/2018
-*/
