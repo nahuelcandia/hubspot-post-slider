@@ -7,7 +7,7 @@
   margin-bottom: 2rem;
 }
 .sl-container {
-  margin: 0 .5rem;
+  margin: 0 .5rem 5em 0;
   box-sizing: border-box;
   max-width: calc(616px + 80px);
 }
@@ -51,7 +51,7 @@
 .sl-title {
   display: inline-block;
   width: 100%;
-  font-size: 48px;
+  font-size: 2em;
   font-weight: bold;
   margin: 0;
   text-overflow: clip;
@@ -65,7 +65,7 @@
   display: inline-block;
   width: 50%;
   text-align: right;
-  font-size: 2rem;
+  font-size: 1.5em;
   font-weight: bold;
   text-overflow: clip;
   word-wrap: break-word;
